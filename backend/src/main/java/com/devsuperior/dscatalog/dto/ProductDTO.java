@@ -36,6 +36,7 @@ public class ProductDTO implements Serializable {
         this.imgUrl = imgUrl;
         this.date = date;
     }
+
     public ProductDTO(Product entity) {
         this.id = entity.getId();
         this.name = entity.getName();
