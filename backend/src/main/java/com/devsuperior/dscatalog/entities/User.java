@@ -1,6 +1,9 @@
 package com.devsuperior.dscatalog.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
@@ -14,9 +17,11 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "Campo obrigatorio")
     private String firstName;
     private String lastName;
     @Column(unique = true)
+    @Email(message = "Favor entrar um email valido")
     private String email;
     private String password;
 

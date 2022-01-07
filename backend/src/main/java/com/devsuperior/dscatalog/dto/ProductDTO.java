@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class ProductDTO implements Serializable {
 
 
     private Long id;
+    @Size(min = 5,max = 60, message = "Numero de caracteres invalido")
     private String name;
     private String description;
     private Double price;
